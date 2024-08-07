@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Gluten:wght@400;700&family=Poppins:wght@400;700&family=Playfair+Display:wght@400;700&family=Rubik:wght@400;700&family=Teachers:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* thin scrollbar */
+.scrollbar-thin,
+::-webkit-scrollbar {
+  scrollbar-width: thin;
+}
+
+.scrollbar-hidden {
+  scrollbar-width: none;
+}
