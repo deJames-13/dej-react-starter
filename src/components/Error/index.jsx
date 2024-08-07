@@ -27,4 +27,14 @@ function Error({ status, message }) {
 
 Error.propTypes = propTypes;
 
+export const NotFound = () => <Error status={404} message='Page not found.' />;
+export const ServerError = () => <Error status={500} message='Server error.' />;
+export const Unauthorized = () => <Error status={401} message='Unauthorized.' />;
+export const Forbidden = () => <Error status={403} message='Forbidden.' />;
+export const BadRequest = () => <Error status={400} message='Bad request.' />;
+export const Unavailable = () => <Error status={503} message='Service unavailable.' />;
+export const Timeout = () => <Error status={504} message='Request timeout.' />;
+export const NetworkError = () => <Error status={0} message='Network error.' />;
+export const UnknownError = () => <Error status={null} message='Unknown error.' />;
+export const IAmATeapot = () => <Error status={418} message='I am a teapot.' />;
 export default Error;
