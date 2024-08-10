@@ -11,7 +11,7 @@ const Guest = () => {
           <h1 className='text-5xl font-bold'>
             <span>Vite + React +</span>
             <Link to='https://daisyui.com/'>
-              <TextRainbow text='daisyui' />
+              <TextRainbow text='daisyUI' />
             </Link>
           </h1>
           <p className='py-6'>A simple starter boilerplate for REACT client using daisyUI theme.</p>
