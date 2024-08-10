@@ -1,1 +1,1 @@
-# React Starter
+For personal use only.

@@ -1,7 +1,9 @@
 /* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
+import { THEMES } from './src/constants';
+
 export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}', 'node_modules/daisyui/dist/**/*.js', 'node_modules/react-daisyui/dist/**/*.js'],
   theme: {
     extend: {},
     fontFamily: {
@@ -13,6 +15,6 @@ export default {
   },
   plugins: [require('daisyui')],
   daisyui: {
-    themes: ['business', 'corporate'],
+    themes: [THEMES.DARK, THEMES.LIGHT],
   },
 };

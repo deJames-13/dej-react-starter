@@ -2,11 +2,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const propTypes = {
-  id: PropTypes.string,
-  onClick: PropTypes.func,
   className: PropTypes.string,
   children: PropTypes.node,
-  to: PropTypes.string,
 };
 
 function LinkButton({ className, children, ...props }) {
