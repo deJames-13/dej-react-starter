@@ -32,7 +32,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/deJames-13/dej-react-starter.git"
+    "url": "git+https://github.com/deJames-13/dej-react-starter.git"
   },
   "keywords": [
     "react",
@@ -40,5 +40,10 @@
     "template"
   ],
   "author": "deJames-13 <de.james013@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "main": "postcss.config.js",
+  "bugs": {
+    "url": "https://github.com/deJames-13/dej-react-starter/issues"
+  },
+  "homepage": "https://github.com/deJames-13/dej-react-starter#readme"
 }
