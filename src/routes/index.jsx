@@ -1,5 +1,5 @@
+import { Errors } from '@components';
 import { createBrowserRouter } from 'react-router-dom';
-import { Errors } from '../components';
 import defaultRoutes from './default';
 
 const router = createBrowserRouter([

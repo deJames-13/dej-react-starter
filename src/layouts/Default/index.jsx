@@ -1,5 +1,5 @@
+import { FooterWrapper, Header } from '@partials';
 import { Outlet } from 'react-router-dom';
-import { FooterWrapper, Header } from '../../partials';
 
 function DefaultLayout() {
   return (

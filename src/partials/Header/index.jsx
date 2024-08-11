@@ -1,7 +1,7 @@
+import { ThemeToggler } from '@components';
 import { Button, Navbar } from 'react-daisyui';
 import { FaGithubAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { ThemeToggler } from '../../components';
 
 function Header() {
   return (

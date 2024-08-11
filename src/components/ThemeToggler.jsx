@@ -1,6 +1,6 @@
+import { THEMES } from '@constants';
 import { PropTypes } from 'prop-types';
 import { useEffect, useState } from 'react';
-import { THEMES } from '../constants';
 
 const propTypes = {
   type: PropTypes.string,

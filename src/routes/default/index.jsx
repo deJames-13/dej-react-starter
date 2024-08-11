@@ -1,5 +1,5 @@
-import { DefaultLayout } from '../../layouts';
-import { Home } from '../../pages';
+import { DefaultLayout } from '@layouts';
+import { Home } from '@pages';
 
 const defaultRoutes = [
   {

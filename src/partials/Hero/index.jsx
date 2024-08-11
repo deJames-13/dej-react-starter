@@ -1,7 +1,7 @@
+import { TextRainbow } from '@components';
 import { PropTypes } from 'prop-types';
 import { Button, Hero } from 'react-daisyui';
 import { Link } from 'react-router-dom';
-import { TextRainbow } from './../../components';
 
 const Guest = () => {
   return (
