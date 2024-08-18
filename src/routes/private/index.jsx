@@ -1,5 +1,5 @@
 import { PrivateLayout } from '@layouts';
-import { Dashboard } from '@pages';
+import { Dashboard } from '@screens';
 
 const privateRoutes = [
   {
