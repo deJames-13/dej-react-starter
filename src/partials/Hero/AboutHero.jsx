@@ -16,8 +16,8 @@ function GuestHero() {
             </h1>
             <p className='py-6'>This is a simple app to demonstrate how to build a applications using Vite, ReactJS, and DaisyUI.</p>
             <span>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos asperiores velit, nemo veniam distinctio quisquam delectus ab quaerat cupiditate perferendis, dolorem nihil blanditiis incidunt porro animi hic minima veritatis
-              cum.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos asperiores velit, nemo veniam distinctio quisquam delectus ab quaerat cupiditate perferendis, dolorem nihil blanditiis
+              incidunt porro animi hic minima veritatis cum.
             </span>
           </div>
           <Link to='https://github.com/deJames-13'>
