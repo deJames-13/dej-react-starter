@@ -3,6 +3,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --toastify-color-light: theme(colors.base-200);
+    --toastify-color-dark: theme(colors.base-200);
+    --toastify-color-info: theme(colors.info);
+    --toastify-color-success: theme(colors.success);
+    --toastify-color-warning: theme(colors.warning);
+    --toastify-color-error: theme(colors.error);
+
+    --toastify-toast-background: theme(colors.base-200);
+    --toastify-text-color-light: theme(colors.base-content);
+    --toastify-text-color-dark: theme(colors.base-content);
+    --toastify-font-family: theme(fontFamily.sans);
+  }
+}
+
 /* thin scrollbar */
 .scrollbar-thin,
 ::-webkit-scrollbar {

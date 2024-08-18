@@ -8,7 +8,18 @@ import './App.css';
 function App() {
   return (
     <React.StrictMode>
-      <ToastContainer position='top-right' autoClose={5000} hideProgressBar={false} newestOnTop={true} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover stacked />
+      <ToastContainer
+        position='top-right'
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        stacked
+      />
       <RouterProvider router={router} />
     </React.StrictMode>
   );

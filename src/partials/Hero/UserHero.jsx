@@ -12,7 +12,10 @@ function UserHero({ user }) {
           <h1 className='text-5xl font-bold'>
             <TextRainbow text={user.name || 'Private User'} />
           </h1>
-          <p className='py-6'>This route is for authenticated users only. You should modify the logic for this route to fit your application.</p>
+          <p className='py-6'>
+            This route is for authenticated users only. You should modify the
+            logic for this route to fit your application.
+          </p>
           <Link to='/profile'>
             <Button color='primary'>View Profile</Button>
           </Link>

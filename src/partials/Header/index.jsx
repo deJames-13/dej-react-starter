@@ -8,24 +8,41 @@ function Header() {
     <>
       <Navbar>
         <Navbar.Start>
-          <Link to='/' className='text-xl normal-case btn btn-ghost'>
+          <Link
+            to='/'
+            className='text-xl normal-case btn btn-ghost'
+          >
             App
           </Link>
           <ThemeToggler />
         </Navbar.Start>
         <Navbar.Center className='hidden lg:flex'>
-          <Link to='/' className='btn btn-ghost'>
+          <Link
+            to='/'
+            className='btn btn-ghost'
+          >
             Home
           </Link>
-          <Link to='/dashboard' className='btn btn-ghost'>
+          <Link
+            to='/dashboard'
+            className='btn btn-ghost'
+          >
             Dashboard
           </Link>
-          <Link to='/about' className='btn btn-ghost'>
+          <Link
+            to='/about'
+            className='btn btn-ghost'
+          >
             About
           </Link>
         </Navbar.Center>
         <Navbar.End>
-          <Button tag='a' href='https://github.com/deJames-13/dej-react-starter' color='primary' variant='outline'>
+          <Button
+            tag='a'
+            href='https://github.com/deJames-13/dej-react-starter'
+            color='primary'
+            variant='outline'
+          >
             <FaGithubAlt />
             View in GitHub
           </Button>

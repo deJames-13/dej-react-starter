@@ -6,7 +6,10 @@ const propTypes = {
 
 function Button({ children, ...buttonProps }) {
   return (
-    <button className='btn btn-primary' {...buttonProps}>
+    <button
+      className='btn btn-primary'
+      {...buttonProps}
+    >
       {children}
     </button>
   );

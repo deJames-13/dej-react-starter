@@ -7,10 +7,24 @@ function FormikInput({ label, variant, ...props }) {
   const [field, meta] = useField(props);
   switch (variant) {
     case 'floating':
-      return <FloatingInput label={label} meta={meta} {...field} {...props} />;
+      return (
+        <FloatingInput
+          label={label}
+          meta={meta}
+          {...field}
+          {...props}
+        />
+      );
 
     default:
-      return <FormInput label={label} meta={meta} {...field} {...props} />;
+      return (
+        <FormInput
+          label={label}
+          meta={meta}
+          {...field}
+          {...props}
+        />
+      );
   }
 }
 

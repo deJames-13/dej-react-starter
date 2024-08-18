@@ -13,7 +13,9 @@ function GuestHero() {
               <TextRainbow text='daisyUI' />
             </Link>
           </h1>
-          <p className='py-6'>A simple starter boilerplate for REACT client using daisyUI theme.</p>
+          <p className='py-6'>
+            A simple starter boilerplate for REACT client using daisyUI theme.
+          </p>
           <Link to='/signup'>
             <Button color='primary'>Get Started</Button>
           </Link>

@@ -6,7 +6,8 @@ import rootReducer from './reducers.js';
 
 const store = configureStore({
   reducer: rootReducer,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(apiSlice.middleware),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(apiSlice.middleware),
   devTools: APP_ENV === APP.STATUS.DEVELOPMENT,
 });
 setupListeners(store.dispatch);
