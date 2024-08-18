@@ -1,9 +1,14 @@
 /* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
-import { THEMES } from './src/constants';
+import { THEMES } from './src/app/constants';
 
 export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}', 'node_modules/daisyui/dist/**/*.js', 'node_modules/react-daisyui/dist/**/*.js'],
+  content: [
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx}',
+    'node_modules/daisyui/dist/**/*.js',
+    'node_modules/react-daisyui/dist/**/*.js',
+  ],
   theme: {
     extend: {},
     fontFamily: {
@@ -18,3 +23,4 @@ export default {
     themes: [THEMES.DARK, THEMES.LIGHT],
   },
 };
+

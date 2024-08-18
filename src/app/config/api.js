@@ -6,7 +6,7 @@
 //
 //
 // ex: useLoginMutation, useLoginQuery, useLoginSubscription
-import { API } from '@constants';
+import { API } from '@app/constants';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 const baseQuery = fetchBaseQuery({ baseUrl: API.V1 });
 
