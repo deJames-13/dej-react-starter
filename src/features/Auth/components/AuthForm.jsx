@@ -1,5 +1,4 @@
-import { FormikInput } from '@components';
-import { Form, Formik } from 'formik';
+import { FormikForm } from '@components';
 import { Button } from 'react-daisyui';
 import { toast } from 'react-toastify';
 import { loginValidation, signupValidation } from '../validation.js';
@@ -10,6 +9,10 @@ const onSubmit = async (values, actions) => {
   actions.resetForm();
 };
 
+const loginSchema = [
+  { label: 'Email Address', name: 'email', type: 'email' },
+  { label: 'Enter Password', name: 'password', type: 'password' },
+];
 const loginFormik = {
   initialValues: {
     email: '',
@@ -21,85 +24,46 @@ const loginFormik = {
 
 export const LoginForm = () => {
   return (
-    <Formik {...loginFormik}>
-      {({ isSubmitting }) => (
-        <Form
-          autoComplete='off'
-          autoFocus={true}
-          className='flex flex-col gap-8'
-        >
-          <FormikInput
-            label='Enter your email'
-            name='email'
-            type='email'
-          />
-          <FormikInput
-            label='Enter your password'
-            name='password'
-            type='password'
-          />
-
-          <Button
-            variant='outline'
-            color='primary'
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? 'Loading...' : 'Log In'}
+    <FormikForm
+      formikProps={loginFormik}
+      formSchema={loginSchema}
+      element={({ isSubmitting }) => {
+        return (
+          <Button variant="outline" color="primary" disabled={isSubmitting}>
+            Log In
           </Button>
-        </Form>
-      )}
-    </Formik>
+        );
+      }}
+    />
   );
 };
 
+const signupSchema = [
+  { label: 'Username', name: 'username', type: 'text' },
+  { label: 'Email Address', name: 'email', type: 'email' },
+  { label: 'Enter Password', name: 'password', type: 'password' },
+  { label: 'Confirm Password', name: 'confirm_password', type: 'password' },
+];
 const signupFormik = {
-  initialValues: {
-    username: '',
-    email: '',
-    password: '',
-    confirm_password: '',
-  },
+  initialValues: signupSchema.reduce((acc, field) => {
+    acc[field.name] = '';
+    return acc;
+  }, {}),
   validationSchema: signupValidation,
   onSubmit: onSubmit,
 };
 export const SignupForm = () => {
   return (
-    <Formik {...signupFormik}>
-      {({ isSubmitting }) => (
-        <Form
-          autoComplete='off'
-          className='flex flex-col gap-8'
-        >
-          <FormikInput
-            label='Username'
-            name='username'
-            type='text'
-          />
-          <FormikInput
-            label='Email Address'
-            name='email'
-            type='email'
-          />
-          <FormikInput
-            label='Enter Password'
-            name='password'
-            type='password'
-          />
-          <FormikInput
-            label='Confirm Password'
-            name='confirm_password'
-            type='password'
-          />
-
-          <Button
-            variant='outline'
-            color='primary'
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? 'Loading...' : 'Sign Up'}
+    <FormikForm
+      formikProps={signupFormik}
+      formSchema={signupSchema}
+      element={({ isSubmitting }) => {
+        return (
+          <Button variant="outline" color="primary" disabled={isSubmitting}>
+            Sign Up
           </Button>
-        </Form>
-      )}
-    </Formik>
+        );
+      }}
+    />
   );
 };
