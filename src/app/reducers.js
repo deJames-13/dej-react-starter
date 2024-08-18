@@ -1,4 +1,4 @@
-import { apiSlice } from '@config/api';
+import { apiSlice } from '@config';
 import { combineReducers } from '@reduxjs/toolkit';
 
 const rootReducer = combineReducers({

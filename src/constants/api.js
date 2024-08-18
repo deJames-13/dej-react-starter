@@ -1,6 +1,13 @@
+const API_PATH = '/api';
+
 export const VERSIONS = {
   V1: '/v1',
 };
+
+export const API = Object.keys(VERSIONS).reduce((acc, key) => {
+  acc[key] = `${API_PATH}${VERSIONS[key]}`;
+  return acc;
+}, {});
 
 export const METHODS = {
   GET: 'get',
