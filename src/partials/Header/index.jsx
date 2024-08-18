@@ -9,7 +9,7 @@ function Header() {
       <Navbar>
         <Navbar.Start>
           <Link to='/' className='text-xl normal-case btn btn-ghost'>
-            daisyUI
+            App
           </Link>
           <ThemeToggler />
         </Navbar.Start>
