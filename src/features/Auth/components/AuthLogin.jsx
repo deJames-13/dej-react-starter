@@ -1,47 +1,66 @@
-import { Button, Card, Form, Input } from 'react-daisyui';
-import { Link, useNavigate } from 'react-router-dom';
+import { FormikInput } from '@components';
+import { Form, Formik } from 'formik';
+import { Button, Card } from 'react-daisyui';
+import { Link } from 'react-router-dom';
+import * as yup from 'yup';
 
+const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}$/;
+const validation = yup.object().shape({
+	email: yup.string().email('Please enter a valid email').required('Required'),
+	password: yup.string().required('Required'),
+});
+
+const initialValues = {
+	email: '',
+	password: '',
+};
+
+const onSubmit = async (values, actions) => {
+	await new Promise((resolve) => setTimeout(resolve, 1000));
+	actions.resetForm();
+};
+
+const formikProps = {
+	initialValues: {
+		email: '',
+		password: '',
+	},
+	validationSchema: validation,
+	onSubmit: onSubmit,
+};
 function AuthLogin() {
-  const navigate = useNavigate();
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    navigate('/');
-  };
-  return (
-    <>
-      <div className='text-center lg:text-left'>
-        <h1 className='text-5xl font-bold'>Login now!</h1>
-        <p className='py-6'>Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-      </div>
-      <Card className='flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100'>
-        <Card.Body>
-          <Form>
-            <Form.Label title='Email' />
-            <Input type='text' placeholder='email' className='input-bordered' />
-          </Form>
-          <Form>
-            <Form.Label title='Password' />
-            <Input type='text' placeholder='password' className='input-bordered' />
-            <label className='label'>
-              <Link href='#' className='label-text-alt' hover>
-                Forgot password?
-              </Link>
-            </label>
-          </Form>
-          <Form className='mt-6' onSubmit={handleSubmit}>
-            <Button color='primary'>Login</Button>
-          </Form>
-          <div className='divider'>or</div>
-          <div className='flex justify-center gap-2'>
-            Don't have an account?
-            <Link to='/signup' className='link link-primary'>
-              Sign Up
-            </Link>
-          </div>
-        </Card.Body>
-      </Card>
-    </>
-  );
+	return (
+		<>
+			<div className='text-center lg:text-left'>
+				<h1 className='text-5xl font-bold'>Login now!</h1>
+				<p className='py-6'>Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+			</div>
+			<Card className='flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100'>
+				<Card.Body>
+					<Formik {...formikProps}>
+						{({ isSubmitting }) => (
+							<Form autoComplete='off' autoFocus={true} className='flex flex-col gap-8'>
+								<FormikInput label='Enter your email' name='email' type='email' />
+								<FormikInput label='Enter your password' name='password' type='password' />
+
+								<Button variant='outline' color='primary' disabled={isSubmitting}>
+									{isSubmitting ? 'Loading...' : 'Log In'}
+								</Button>
+							</Form>
+						)}
+					</Formik>
+
+					<div className='divider'>or</div>
+					<div className='flex justify-center gap-2'>
+						Doesn't have an account?
+						<Link to='/signup' className='link link-secondary'>
+							Sign Up
+						</Link>
+					</div>
+				</Card.Body>
+			</Card>
+		</>
+	);
 }
 
 AuthLogin.propTypes = {};
