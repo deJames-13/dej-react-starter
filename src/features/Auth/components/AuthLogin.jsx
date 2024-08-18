@@ -1,7 +1,7 @@
 import { Button, Card, Form, Input } from 'react-daisyui';
 import { Link, useNavigate } from 'react-router-dom';
 
-function LoginContent() {
+function AuthLogin() {
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -44,6 +44,6 @@ function LoginContent() {
   );
 }
 
-LoginContent.propTypes = {};
+AuthLogin.propTypes = {};
 
-export default LoginContent;
+export default AuthLogin;

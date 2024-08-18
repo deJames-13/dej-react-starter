@@ -1,5 +1,6 @@
+import { Auth } from '@features';
 import { DefaultLayout } from '@layouts';
-import { About, Auth, Home } from '@screens';
+import { About, Home } from '@screens';
 
 const defaultRoutes = [
   {

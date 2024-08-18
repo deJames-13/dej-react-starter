@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 import { Hero } from 'react-daisyui';
-import LoginContent from './LoginContent';
-import SignupContent from './SignupContent';
+import AuthLogin from './AuthLogin';
+import AuthSignup from './AuthSignup';
 
 function Auth({ page = 'login' }) {
   return (
     <Hero className='container max-w-5xl'>
-      <Hero.Content className='flex-col lg:flex-row-reverse'>{page === 'login' ? <LoginContent /> : <SignupContent />}</Hero.Content>
+      <Hero.Content className='flex-col lg:flex-row-reverse'>{page === 'login' ? <AuthLogin /> : <AuthSignup />}</Hero.Content>
     </Hero>
   );
 }
