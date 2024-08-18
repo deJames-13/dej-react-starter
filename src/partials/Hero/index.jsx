@@ -15,7 +15,7 @@ const Guest = () => {
             </Link>
           </h1>
           <p className='py-6'>A simple starter boilerplate for REACT client using daisyUI theme.</p>
-          <Link to='/'>
+          <Link to='/signup'>
             <Button color='primary'>Get Started</Button>
           </Link>
         </div>

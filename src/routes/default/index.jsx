@@ -1,5 +1,6 @@
 import { DefaultLayout } from '@layouts';
 import { Home } from '@pages';
+import { Auth } from '@pages';
 
 const defaultRoutes = [
   {
@@ -13,6 +14,14 @@ const defaultRoutes = [
       {
         path: '/home',
         element: <Home />,
+      },
+      {
+        path: '/login',
+        element: <Auth page='login' />,
+      },
+      {
+        path: '/signup',
+        element: <Auth page='signup' />,
       },
     ],
   },
