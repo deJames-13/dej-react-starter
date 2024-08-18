@@ -23,7 +23,7 @@ function GuestHero() {
           <Link to='https://github.com/deJames-13'>
             <Button variant='outline' color='primary'>
               <FaGithubAlt />
-              <span className='text-cyan-200'>Created by deJames-13</span>
+              <span className='text-primary'>Created by deJames-13</span>
             </Button>
           </Link>
         </div>
