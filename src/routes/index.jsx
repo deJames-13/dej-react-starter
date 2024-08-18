@@ -1,9 +1,11 @@
 import { Errors } from '@components';
 import { createBrowserRouter } from 'react-router-dom';
 import defaultRoutes from './default';
+import privateRoutes from './private';
 
 const router = createBrowserRouter([
   ...defaultRoutes,
+  ...privateRoutes,
   {
     path: '*',
     element: <Errors.NotFound />,

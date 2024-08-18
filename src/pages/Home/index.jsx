@@ -1,7 +1,7 @@
-import { HeroWrapper } from '@partials';
+import { GuestHero } from '@partials';
 
 function Home() {
-  return <HeroWrapper />;
+  return <GuestHero />;
 }
 
 export default Home;

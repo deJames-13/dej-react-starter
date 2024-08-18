@@ -1,9 +1,12 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import { Card, Form, Input } from 'react-daisyui';
-import { Link } from 'react-router-dom';
+import { Button, Card, Form, Input } from 'react-daisyui';
+import { Link, useNavigate } from 'react-router-dom';
 
-function LoginContent(props) {
+function LoginContent() {
+  const navigate = useNavigate();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate('/');
+  };
   return (
     <>
       <div className='text-center lg:text-left'>
@@ -25,9 +28,16 @@ function LoginContent(props) {
               </Link>
             </label>
           </Form>
-          <Form className='mt-6'>
+          <Form className='mt-6' onSubmit={handleSubmit}>
             <Button color='primary'>Login</Button>
           </Form>
+          <div className='divider'>or</div>
+          <div className='flex justify-center gap-2'>
+            Don't have an account?
+            <Link to='/signup' className='link link-primary'>
+              Sign Up
+            </Link>
+          </div>
         </Card.Body>
       </Card>
     </>

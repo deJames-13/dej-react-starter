@@ -1,8 +1,12 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import { Button, Card, Form, Input, Link } from 'react-daisyui';
+import { Button, Card, Form, Input } from 'react-daisyui';
+import { Link, useNavigate } from 'react-router-dom';
 
-function SignupContent(props) {
+function SignupContent() {
+  const navigate = useNavigate();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate('/');
+  };
   return (
     <>
       <div className='text-center lg:text-left'>
@@ -28,15 +32,21 @@ function SignupContent(props) {
               </Link>
             </label>
           </Form>
-          <Form className='mt-6'>
+          <Form className='mt-6' onSubmit={handleSubmit}>
             <Button color='primary'>Sign Up</Button>
           </Form>
         </Card.Body>
+
+        <div className='divider'>or</div>
+        <div className='flex justify-center gap-2'>
+          Alread have an account?
+          <Link to='/login' className='link link-secondary'>
+            Login
+          </Link>
+        </div>
       </Card>
     </>
   );
 }
-
-SignupContent.propTypes = {};
 
 export default SignupContent;

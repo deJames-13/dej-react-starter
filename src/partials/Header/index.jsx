@@ -8,18 +8,20 @@ function Header() {
     <>
       <Navbar>
         <Navbar.Start>
-          <a className='text-xl normal-case btn btn-ghost'>daisyUI</a>
+          <Link to='/' className='text-xl normal-case btn btn-ghost'>
+            daisyUI
+          </Link>
           <ThemeToggler />
         </Navbar.Start>
         <Navbar.Center className='hidden lg:flex'>
           <Link to='/' className='btn btn-ghost'>
             Home
           </Link>
+          <Link to='/dashboard' className='btn btn-ghost'>
+            Dashboard
+          </Link>
           <Link to='/about' className='btn btn-ghost'>
             About
-          </Link>
-          <Link to='/contact' className='btn btn-ghost'>
-            Contact Us
           </Link>
         </Navbar.Center>
         <Navbar.End>
