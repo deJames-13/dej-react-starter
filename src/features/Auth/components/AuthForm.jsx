@@ -1,7 +1,7 @@
 import { FormikForm } from '@components';
 import { Button } from 'react-daisyui';
 import { toast } from 'react-toastify';
-import { loginValidation, signupValidation } from '../validation.js';
+import { loginValidation, signupValidation } from '../authValidation.js';
 
 const onSubmit = async (values, actions) => {
   await new Promise((resolve) => setTimeout(resolve, 1000));
