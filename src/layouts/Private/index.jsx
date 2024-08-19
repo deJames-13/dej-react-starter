@@ -6,7 +6,7 @@ function PrivateLayout() {
   const user = {
     name: 'Private User',
   };
-  const [visible, toggleVisible] = useToggle(true);
+  const [visible, toggleVisible] = useToggle(false);
 
   return (
     <div id="private-layout" className="relative w-screen h-screen overflow-y-auto">
