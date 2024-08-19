@@ -21,11 +21,11 @@ const defaultRoutes = [
       },
       {
         path: '/login',
-        element: <Auth page='login' />,
+        element: <Auth page="login" />,
       },
       {
         path: '/signup',
-        element: <Auth page='signup' />,
+        element: <Auth page="signup" />,
       },
     ],
   },

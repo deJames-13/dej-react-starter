@@ -7,7 +7,7 @@ const propTypes = {
 function Button({ children, ...buttonProps }) {
   return (
     <button
-      className='btn btn-primary'
+      className="btn btn-primary"
       {...buttonProps}
     >
       {children}

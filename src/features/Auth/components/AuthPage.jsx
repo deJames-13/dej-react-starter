@@ -5,8 +5,8 @@ import AuthSignup from './AuthSignup';
 
 function Auth({ page = 'login' }) {
   return (
-    <Hero className='container max-w-5xl'>
-      <Hero.Content className='flex-col lg:flex-row-reverse'>
+    <Hero className="container max-w-5xl">
+      <Hero.Content className="flex-col lg:flex-row-reverse">
         {page === 'login' ? <AuthLogin /> : <AuthSignup />}
       </Hero.Content>
     </Hero>

@@ -6,9 +6,16 @@ function FormikForm({ formikProps, formSchema, element = () => {}, ...formProps 
   return (
     <Formik {...formikProps}>
       {(props) => (
-        <Form autoComplete="off" className="flex flex-col gap-8" {...formProps}>
+        <Form
+          autoComplete="off"
+          className="flex flex-col gap-8"
+          {...formProps}
+        >
           {formSchema.map((field, idx) => (
-            <FormikInput key={field.name + idx} {...field} />
+            <FormikInput
+              key={field.name + idx}
+              {...field}
+            />
           ))}
 
           {typeof element === 'function' ? element(props) : element}

@@ -24,7 +24,10 @@ function AboutSection() {
             </span>
           </div>
           <Link to="https://github.com/deJames-13">
-            <Button variant="outline" color="primary">
+            <Button
+              variant="outline"
+              color="primary"
+            >
               <FaGithubAlt />
               <span>Created by deJames-13</span>
             </Button>

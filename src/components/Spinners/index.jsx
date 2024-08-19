@@ -1,6 +1,6 @@
 function Spinner() {
   return (
-    <div className='m-0 absolute top-0 left-0 w-full h-full z-[1000] backdrop-blur-sm bg-white/10 flex items-center justify-center '>
+    <div className="m-0 absolute top-0 left-0 w-full h-full z-[1000] backdrop-blur-sm bg-white/10 flex items-center justify-center ">
       <style>
         {`
         /* HTML: <div class="loader"></div> */
@@ -27,7 +27,7 @@ function Spinner() {
         }
     `}
       </style>
-      <div className='spinner-loader'></div>
+      <div className="spinner-loader"></div>
     </div>
   );
 }

@@ -29,7 +29,11 @@ export const LoginForm = () => {
       formSchema={loginSchema}
       element={({ isSubmitting }) => {
         return (
-          <Button variant="outline" color="primary" disabled={isSubmitting}>
+          <Button
+            variant="outline"
+            color="primary"
+            disabled={isSubmitting}
+          >
             Log In
           </Button>
         );
@@ -59,7 +63,11 @@ export const SignupForm = () => {
       formSchema={signupSchema}
       element={({ isSubmitting }) => {
         return (
-          <Button variant="outline" color="primary" disabled={isSubmitting}>
+          <Button
+            variant="outline"
+            color="primary"
+            disabled={isSubmitting}
+          >
             Sign Up
           </Button>
         );

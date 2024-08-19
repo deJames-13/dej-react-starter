@@ -4,12 +4,10 @@ function FloatingInput({ label, refer, meta, ...inputProps }) {
   return (
     <div>
       <div
-        className={`relative border ${
-          meta?.touched && meta?.error ? 'border-error' : 'border-gray-300'
-        } overflow-clip`}
+        className={`relative border ${meta?.touched && meta?.error ? 'border-error' : 'border-gray-300'} overflow-clip`}
       >
         <input
-          type='text'
+          type="text"
           ref={refer}
           {...inputProps}
           className={`block shadow-xl px-2.5 pb-2.5 pt-5 w-full text-sm bg-base-200 border-0  ${
@@ -17,8 +15,8 @@ function FloatingInput({ label, refer, meta, ...inputProps }) {
           } appearance-none  focus:border-b-2 focus:outline-none focus:ring-0 focus: ${
             meta?.touched && meta?.error ? 'border-error' : 'border-primary'
           }/80 peer`}
-          placeholder=' '
-          autoComplete='off'
+          placeholder=" "
+          autoComplete="off"
         />
         <label
           htmlFor={inputProps.id ?? 'floating__filled'}
@@ -31,9 +29,7 @@ function FloatingInput({ label, refer, meta, ...inputProps }) {
           {label}
         </label>
       </div>
-      {meta?.touched && meta?.error && (
-        <div className='text-xs italic text-error'>{meta?.error}</div>
-      )}
+      {meta?.touched && meta?.error && <div className="text-xs italic text-error">{meta?.error}</div>}
     </div>
   );
 }
