@@ -11,7 +11,7 @@ function PrivateLayout() {
   return (
     <div
       id="private-layout"
-      className="relative w-screen h-screen overflow-y-auto"
+      className="relative w-screen h-screen overflow-y-auto "
     >
       <Sidebar
         visible={visible}
@@ -19,7 +19,7 @@ function PrivateLayout() {
         noOverlay={true}
         noOverlayEvent={true}
       >
-        <div>
+        <div className="relative w-full">
           <Header clickLogo={toggleVisible()} />
           <div className="container grid min-h-screen mx-auto place-items-center">
             <Outlet context={{ user }} />

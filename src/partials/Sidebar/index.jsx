@@ -1,7 +1,10 @@
 import { useToggle } from '@common';
-import { Sidebar as SidebarComponent } from '@components';
+import { Sidebar as SidebarComponent, TextRainbow } from '@components';
 import PropTypes from 'prop-types';
+import { Button, Menu } from 'react-daisyui';
 import { BsPinAngleFill } from 'react-icons/bs';
+import { FaArrowAltCircleRight, FaBoxes, FaCartPlus, FaHome, FaTable, FaTimes, FaUsers } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const SideContent = ({ pin, togglePin, toggleVisible, side, noOverlayEvent = false, noOverlay = false }) => {
   return (
@@ -16,22 +19,152 @@ const SideContent = ({ pin, togglePin, toggleVisible, side, noOverlayEvent = fal
       )}
       <div className="relative flex flex-col w-full h-full overflow-visible">
         <div className="flex items-center w-full gap-2 p-2 bg-base-200">
-          {!pin && (
-            <div
-              className="flex-grow btn btn-error btn-outline"
+          <div className="flex-grow ">
+            <TextRainbow
+              text="Dashboard"
+              className="text-lg font-extrabold btn btn-ghost"
               onClick={toggleVisible()}
-            >
-              Close
-            </div>
-          )}
+            />
+          </div>
+
           <button
-            className={`hidden 2xl:flex btn btn-primary ${pin ? 'ml-auto w-full' : 'btn-outline'}`}
+            className={`hidden 2xl:flex btn btn-primary ${pin ? 'ml-auto' : 'btn-outline'}`}
             onClick={togglePin()}
           >
             <BsPinAngleFill />
           </button>
         </div>
-        <div className="flex-grow bg-base-200">{side}</div>
+        <div className="flex flex-col flex-grow bg-base-200">
+          <div className="divider"></div>
+
+          <Menu>
+            <Menu.Item>
+              <Link to="#">
+                <span className="flex items-center gap-2 font-bold ">
+                  <FaHome />
+                  Home
+                </span>
+              </Link>
+            </Menu.Item>
+            <Menu.Item>
+              <div class="collapse collapse-arrow p-0 m-0">
+                <input
+                  type="checkbox"
+                  class="peer"
+                />
+                <div class="collapse-title flex items-center">
+                  <span className="flex items-center gap-2 font-bold">
+                    <FaUsers />
+                    Manage Users
+                  </span>
+                </div>
+                <div class="collapse-content">
+                  <Link to="#">
+                    <span className="flex items-center gap-2 px-2 text-sm hover:text-primary hover:font-semibold ">
+                      <FaTable />
+                      Table
+                    </span>
+                  </Link>
+                  <Link to="#">
+                    <span className="flex items-center gap-2 px-2 text-sm hover:text-primary hover:font-semibold ">
+                      <FaTable />
+                      List
+                    </span>
+                  </Link>
+                  <Link to="#">
+                    <span className="flex items-center gap-2 px-2 text-sm hover:text-primary hover:font-semibold ">
+                      <FaTable />
+                      Charts
+                    </span>
+                  </Link>
+                </div>
+              </div>
+            </Menu.Item>
+            <Menu.Item>
+              <div class="collapse collapse-arrow p-0 m-0">
+                <input
+                  type="checkbox"
+                  class="peer"
+                />
+                <div class="collapse-title flex items-center">
+                  <span className="flex items-center gap-2 font-bold">
+                    <FaCartPlus />
+                    Manage Orders
+                  </span>
+                </div>
+                <div class="collapse-content">
+                  <Link to="#">
+                    <span className="flex items-center gap-2 px-2 text-sm hover:text-primary hover:font-semibold ">
+                      <FaTable />
+                      Table
+                    </span>
+                  </Link>
+                  <Link to="#">
+                    <span className="flex items-center gap-2 px-2 text-sm hover:text-primary hover:font-semibold ">
+                      <FaTable />
+                      List
+                    </span>
+                  </Link>
+                  <Link to="#">
+                    <span className="flex items-center gap-2 px-2 text-sm hover:text-primary hover:font-semibold ">
+                      <FaTable />
+                      Charts
+                    </span>
+                  </Link>
+                </div>
+              </div>
+            </Menu.Item>
+            <Menu.Item>
+              <div class="collapse collapse-arrow p-0 m-0">
+                <input
+                  type="checkbox"
+                  class="peer"
+                />
+                <div class="collapse-title flex items-center">
+                  <span className="flex items-center gap-2 font-bold">
+                    <FaBoxes />
+                    Manage Products
+                  </span>
+                </div>
+                <div class="collapse-content">
+                  <Link to="#">
+                    <span className="flex items-center gap-2 px-2 text-sm hover:text-primary hover:font-semibold ">
+                      <FaTable />
+                      Table
+                    </span>
+                  </Link>
+                  <Link to="#">
+                    <span className="flex items-center gap-2 px-2 text-sm hover:text-primary hover:font-semibold ">
+                      <FaTable />
+                      List
+                    </span>
+                  </Link>
+                  <Link to="#">
+                    <span className="flex items-center gap-2 px-2 text-sm hover:text-primary hover:font-semibold ">
+                      <FaTable />
+                      Charts
+                    </span>
+                  </Link>
+                </div>
+              </div>
+            </Menu.Item>
+          </Menu>
+
+          {side}
+          <div className="mt-auto">
+            <div className="divider"></div>
+            <div className="p-4 ">
+              <Button
+                color="error"
+                variant="outline"
+                className="w-full "
+              >
+                <FaArrowAltCircleRight />
+                Logout
+              </Button>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
@@ -54,10 +187,8 @@ function Sidebar({ children, visible, toggleVisible, side, ...props }) {
       open={visible || pin}
       onClickOverlay={toggleVisible(pin)}
       className="sticky flex-row-reverse max-h-screen overflow-auto 2xl:flex"
-      contentClassName="2xl:w-full 2xl:max-h-screen overflow-y-auto transition-all ease-in-out"
-      sideClassName={`w-60 md:min-w-60 md:w-80 md:max-w-xs scrollbar-hidden  ${
-        visible || pin ? '2xl:block 2xl:relative' : ''
-      } `}
+      contentClassName="scrollbar-thin 2xl:w-full 2xl:max-h-screen overflow-y-auto transition-all ease-in-out"
+      sideClassName={`w-60 md:min-w-60 md:w-80 md:max-w-xs  ${visible || pin ? '2xl:block 2xl:relative' : ''} `}
       overlayClassName="w-0"
       side={<SideContent {...sideProps} />}
       {...props}
