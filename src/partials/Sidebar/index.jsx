@@ -3,7 +3,7 @@ import { Sidebar as SidebarComponent, TextRainbow } from '@components';
 import PropTypes from 'prop-types';
 import { Button, Menu } from 'react-daisyui';
 import { BsPinAngleFill } from 'react-icons/bs';
-import { FaArrowAltCircleRight, FaBoxes, FaCartPlus, FaHome, FaTable, FaTimes, FaUsers } from 'react-icons/fa';
+import { FaArrowAltCircleRight, FaBoxes, FaCartPlus, FaHome, FaTable, FaUsers } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const SideContent = ({ pin, togglePin, toggleVisible, side, noOverlayEvent = false, noOverlay = false }) => {
@@ -205,3 +205,4 @@ Sidebar.propTypes = {
 };
 
 export default Sidebar;
+export { default as SidebarIcons } from './SidebarIcons';

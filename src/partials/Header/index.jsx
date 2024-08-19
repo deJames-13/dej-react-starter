@@ -59,7 +59,7 @@ function Header({ clickLogo }) {
             variant="outline"
           >
             <FaGithubAlt />
-            View in GitHub
+            <span className="hidden md:block">View in GitHub</span>
           </Button>
         </Navbar.End>
       </Navbar>

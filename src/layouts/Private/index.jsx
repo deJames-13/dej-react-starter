@@ -1,5 +1,5 @@
 import { useToggle } from '@common';
-import { FooterWrapper, Header, Sidebar } from '@partials';
+import { FooterWrapper, Header, SidebarIcons } from '@partials';
 import { Outlet } from 'react-router-dom';
 
 function PrivateLayout() {
@@ -13,7 +13,7 @@ function PrivateLayout() {
       id="private-layout"
       className="relative w-screen h-screen overflow-y-auto "
     >
-      <Sidebar
+      <SidebarIcons
         visible={visible}
         toggleVisible={toggleVisible}
         noOverlay={true}
@@ -26,7 +26,7 @@ function PrivateLayout() {
           </div>
           <FooterWrapper />
         </div>
-      </Sidebar>
+      </SidebarIcons>
     </div>
   );
 }
