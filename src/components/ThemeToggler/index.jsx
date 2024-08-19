@@ -8,9 +8,7 @@ const propTypes = {
   onToggle: PropTypes.func,
 };
 
-const IconsInToggler = ({ onToggle }) => {
-  const isLocalTheme = localStorage.getItem('theme') === THEMES.DARK;
-
+const IconsInToggler = ({ onToggle, isLocalTheme }) => {
   return (
     <label className="grid cursor-pointer place-items-center">
       <input
@@ -52,9 +50,7 @@ const IconsInToggler = ({ onToggle }) => {
   );
 };
 
-const WithIcons = ({ onToggle }) => {
-  const isLocalTheme = localStorage.getItem('theme') === THEMES.DARK;
-
+const WithIcons = ({ onToggle, isLocalTheme }) => {
   return (
     <label className="flex gap-2 cursor-pointer">
       <svg
@@ -89,9 +85,7 @@ const WithIcons = ({ onToggle }) => {
   );
 };
 
-const SwapToggler = ({ onToggle }) => {
-  const isLocalTheme = localStorage.getItem('theme') === THEMES.DARK;
-
+const SwapToggler = ({ onToggle, isLocalTheme }) => {
   return (
     <label className="swap swap-rotate">
       <input onChange={onToggle} checked={isLocalTheme} type="checkbox" className="theme-controller" />
@@ -108,27 +102,29 @@ const SwapToggler = ({ onToggle }) => {
 
 function ThemeToggler({ type }) {
   const [theme, setTheme] = useState(null);
-
+  const isLocalTheme = localStorage.getItem('theme') === THEMES.DARK;
+  const handleThemeChange = (theme) => {
+    return () => {
+      const newTheme = theme === THEMES.DARK ? THEMES.LIGHT : THEMES.DARK;
+      localStorage.setItem('theme', newTheme);
+      setTheme(newTheme);
+    };
+  };
+  const props = { isLocalTheme, onToggle: handleThemeChange(theme) };
   useEffect(() => {
     const localTheme = localStorage.getItem('theme') || THEMES.DARK;
     document.documentElement.setAttribute('data-theme', localTheme);
   }, [theme]);
 
-  const handleThemeChange = (theme) => {
-    const newTheme = theme === THEMES.DARK ? THEMES.LIGHT : THEMES.DARK;
-    localStorage.setItem('theme', newTheme);
-    setTheme(newTheme);
-  };
-
   switch (type) {
     case 'icons':
-      return <WithIcons theme={theme} onToggle={() => handleThemeChange(theme)} />;
+      return <WithIcons {...props} />;
 
     case 'swap':
-      return <SwapToggler theme={theme} onToggle={() => handleThemeChange(theme)} />;
+      return <SwapToggler {...props} />;
 
     default:
-      return <IconsInToggler theme={theme} onToggle={() => handleThemeChange(theme)} />;
+      return <IconsInToggler {...props} />;
   }
 }
 
