@@ -3,7 +3,7 @@ import { Button, Hero } from 'react-daisyui';
 import { FaGithubAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-function AboutHero() {
+function AboutSection() {
   return (
     <Hero>
       <Hero.Content className="text-center">
@@ -35,4 +35,4 @@ function AboutHero() {
   );
 }
 
-export default AboutHero;
+export default AboutSection;

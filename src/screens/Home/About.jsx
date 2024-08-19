@@ -1,7 +1,7 @@
-import { AboutHero } from '@partials';
+import { AboutSection } from '@partials';
 
 function About() {
-  return <AboutHero />;
+  return <AboutSection />;
 }
 
 export default About;
