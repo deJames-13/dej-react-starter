@@ -18,22 +18,25 @@ function Sidebar({ children, visible, toggleVisible, side, ...props }) {
       } `}
       overlayClassName="w-0"
       side={
-        <div className="flex flex-col w-full h-full">
-          <div className="flex items-center w-full gap-2 p-2 bg-base-200">
-            {!pin && (
-              <div className="flex-grow btn btn-error btn-outline" onClick={toggleVisible()}>
-                Close
-              </div>
-            )}
-            <button
-              className={`hidden 2xl:flex btn btn-primary ${pin ? 'ml-auto' : 'btn-outline'}`}
-              onClick={togglePin()}
-            >
-              <BsPinAngleFill />
-            </button>
+        <>
+          <div onClick={toggleVisible()} className="fixed top-0 w-screen h-screen bg-black bg-opacity-50 "></div>
+          <div className="relative flex flex-col w-full h-full overflow-visible">
+            <div className="flex items-center w-full gap-2 p-2 bg-base-200">
+              {!pin && (
+                <div className="flex-grow btn btn-error btn-outline" onClick={toggleVisible()}>
+                  Close
+                </div>
+              )}
+              <button
+                className={`hidden 2xl:flex btn btn-primary ${pin ? 'ml-auto' : 'btn-outline'}`}
+                onClick={togglePin()}
+              >
+                <BsPinAngleFill />
+              </button>
+            </div>
+            <div className="flex-grow bg-base-200">{side}</div>
           </div>
-          <div className="flex-grow bg-base-200">{side}</div>
-        </div>
+        </>
       }
       {...props}
     >
