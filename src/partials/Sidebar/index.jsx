@@ -4,16 +4,16 @@ import PropTypes from 'prop-types';
 import { Menu, Navbar } from 'react-daisyui';
 import { BsPinAngleFill } from 'react-icons/bs';
 
-function Sidebar({ children, visible, toggleVisible, ...props }) {
+function Sidebar({ children, visible, toggleVisible, side, ...props }) {
   const [pin, togglePin] = useToggle(false);
 
   return (
     <SidebarComponent
-      className="flex-row-reverse 2xl:flex "
+      className="sticky flex-row-reverse h-screen 2xl:flex"
       open={visible}
       onClickOverlay={toggleVisible()}
-      contentClassName="2xl:w-full"
-      sideClassName={`max-w-xs  scrollbar-hidden ${visible || pin ? '2xl:block 2xl:w-full 2xl:relative' : ''} `}
+      contentClassName="2xl:w-full 2xl:max-h-screen overflow-y-auto"
+      sideClassName={`w-80 max-w-xs scrollbar-hidden  ${visible || pin ? '2xl:block 2xl:relative' : ''} `}
       overlayClassName="w-0"
       side={
         <div className="h-full">
@@ -24,20 +24,13 @@ function Sidebar({ children, visible, toggleVisible, ...props }) {
               </div>
             )}
             <button
-              className={`hidden 2xl:flex   btn btn-primary ${pin ? 'ml-auto' : 'btn-outline'}`}
+              className={`hidden 2xl:flex btn btn-primary ${pin ? 'ml-auto' : 'btn-outline'}`}
               onClick={togglePin()}
             >
               <BsPinAngleFill />
             </button>
           </div>
-          <Menu className="h-full p-4 bg-base-200 text-base-content">
-            <Menu.Item>
-              <a className="pr-16">Sidebar Item 1</a>
-            </Menu.Item>
-            <Menu.Item>
-              <a className="pr-16">Sidebar Item 2</a>
-            </Menu.Item>
-          </Menu>
+          {side}
         </div>
       }
       {...props}

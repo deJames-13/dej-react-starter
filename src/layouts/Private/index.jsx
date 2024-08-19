@@ -9,7 +9,7 @@ function PrivateLayout() {
   const [visible, toggleVisible] = useToggle(true);
 
   return (
-    <div id="private-layout" className="relative">
+    <div id="private-layout" className="relative w-screen h-screen overflow-y-auto">
       <Sidebar visible={visible} toggleVisible={toggleVisible}>
         <div>
           <Header clickLogo={toggleVisible()} />
