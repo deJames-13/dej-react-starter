@@ -13,10 +13,12 @@ function Sidebar({ children, visible, toggleVisible, side, ...props }) {
       open={visible}
       onClickOverlay={toggleVisible()}
       contentClassName="2xl:w-full 2xl:max-h-screen overflow-y-auto"
-      sideClassName={`w-80 max-w-xs scrollbar-hidden  ${visible || pin ? '2xl:block 2xl:relative' : ''} `}
+      sideClassName={`h-full min-w-60 w-80 max-w-xs scrollbar-hidden  ${
+        visible || pin ? '2xl:block 2xl:relative' : ''
+      } `}
       overlayClassName="w-0"
       side={
-        <div className="h-full">
+        <div className="flex flex-col w-full h-full">
           <div className="flex items-center w-full gap-2 p-2 bg-base-200">
             {!pin && (
               <div className="flex-grow btn btn-error btn-outline" onClick={toggleVisible()}>
@@ -30,7 +32,7 @@ function Sidebar({ children, visible, toggleVisible, side, ...props }) {
               <BsPinAngleFill />
             </button>
           </div>
-          {side}
+          <div className="flex-grow bg-base-200">{side}</div>
         </div>
       }
       {...props}
