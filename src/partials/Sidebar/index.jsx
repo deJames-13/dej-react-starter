@@ -25,7 +25,7 @@ const SideContent = ({ pin, togglePin, toggleVisible, side, noOverlayEvent = fal
             </div>
           )}
           <button
-            className={`hidden 2xl:flex btn btn-primary ${pin ? 'ml-auto' : 'btn-outline'}`}
+            className={`hidden 2xl:flex btn btn-primary ${pin ? 'ml-auto w-full' : 'btn-outline'}`}
             onClick={togglePin()}
           >
             <BsPinAngleFill />
@@ -51,10 +51,10 @@ function Sidebar({ children, visible, toggleVisible, side, ...props }) {
 
   return (
     <SidebarComponent
-      open={visible}
-      onClickOverlay={toggleVisible()}
+      open={visible || pin}
+      onClickOverlay={toggleVisible(pin)}
       className="sticky flex-row-reverse max-h-screen overflow-auto 2xl:flex"
-      contentClassName="2xl:w-full 2xl:max-h-screen overflow-y-auto"
+      contentClassName="2xl:w-full 2xl:max-h-screen overflow-y-auto transition-all ease-in-out"
       sideClassName={`w-60 md:min-w-60 md:w-80 md:max-w-xs scrollbar-hidden  ${
         visible || pin ? '2xl:block 2xl:relative' : ''
       } `}
