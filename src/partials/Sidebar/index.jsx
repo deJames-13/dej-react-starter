@@ -6,7 +6,6 @@ import { BsPinAngleFill } from 'react-icons/bs';
 const SideContent = ({ pin, togglePin, toggleVisible, side }) => {
   return (
     <>
-      {' '}
       {!pin && <div onClick={toggleVisible()} className="fixed top-0 w-screen h-full bg-black bg-opacity-50 "></div>}
       <div className="relative flex flex-col w-full h-full overflow-visible">
         <div className="flex items-center w-full gap-2 p-2 bg-base-200">
@@ -37,6 +36,7 @@ SideContent.propTypes = {
 
 function Sidebar({ children, visible, toggleVisible, side, ...props }) {
   const [pin, togglePin] = useToggle(false);
+  const sideProps = { pin, togglePin, toggleVisible, side };
 
   return (
     <SidebarComponent
@@ -48,7 +48,7 @@ function Sidebar({ children, visible, toggleVisible, side, ...props }) {
         visible || pin ? '2xl:block 2xl:relative' : ''
       } `}
       overlayClassName="w-0"
-      side={<SideContent pin={pin} togglePin={togglePin} toggleVisible={toggleVisible} side={side} />}
+      side={<SideContent {...sideProps} />}
       {...props}
     >
       {children}
