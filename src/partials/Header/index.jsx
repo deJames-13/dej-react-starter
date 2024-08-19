@@ -1,16 +1,14 @@
 import { TextRainbow, ThemeToggler } from '@components';
 import { Button, Navbar } from 'react-daisyui';
-import { FaGithubAlt } from 'react-icons/fa';
+import { FaBars, FaGithubAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-function Header() {
+function Header({ clickLogo }) {
   return (
     <>
       <Navbar>
         <Navbar.Start>
-          <Link to="/" className="text-xl font-extrabold btn btn-ghost">
-            <TextRainbow text="ACME" />
-          </Link>
+          <TextRainbow text="ACME" className="text-xl font-extrabold btn btn-ghost" onClick={clickLogo} />
           <ThemeToggler />
         </Navbar.Start>
         <Navbar.Center className="hidden lg:flex">
