@@ -1,4 +1,4 @@
-import TextRainbow from '@common/components';
+import { TextRainbow } from '@common/components';
 import PropTypes from 'prop-types';
 import { Button, Hero } from 'react-daisyui';
 import { Link } from 'react-router-dom';
