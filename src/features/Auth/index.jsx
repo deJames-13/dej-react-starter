@@ -1,2 +1,3 @@
-export * from './authSlice';
+export * from './auth.api';
+export * from './auth.slice';
 export * from './components';
