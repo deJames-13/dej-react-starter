@@ -1,4 +1,4 @@
-import { TextRainbow, ThemeToggler } from '@components';
+import { TextRainbow, ThemeToggler } from '@common/components';
 import { Button, Dropdown, Navbar } from 'react-daisyui';
 import { FaBars, FaGithubAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';

@@ -1,4 +1,4 @@
-import router from '@routes';
+import router from '@app/routes';
 import React from 'react';
 import { RouterProvider } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';

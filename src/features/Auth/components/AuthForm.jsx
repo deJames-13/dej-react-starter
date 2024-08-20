@@ -1,4 +1,4 @@
-import { FormikForm } from '@components';
+import { FormikForm } from '@common/components';
 import { Button } from 'react-daisyui';
 import { toast } from 'react-toastify';
 import { loginValidation, signupValidation } from '../auth.validation.jss';

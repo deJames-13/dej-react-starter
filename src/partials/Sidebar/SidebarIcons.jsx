@@ -1,8 +1,7 @@
 import { useToggle } from '@common';
-import { Sidebar as SidebarComponent } from '@components';
+import { Sidebar as SidebarComponent } from '@common/components';
 import PropTypes from 'prop-types';
 import { Button, Dropdown, Menu } from 'react-daisyui';
-import { BsPinAngleFill } from 'react-icons/bs';
 import {
   FaAngleRight,
   FaArrowAltCircleRight,
