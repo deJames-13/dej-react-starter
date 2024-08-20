@@ -1,3 +1,5 @@
+import { Auth } from './components';
+
 export const authRoutes = [
   {
     path: '/login',
