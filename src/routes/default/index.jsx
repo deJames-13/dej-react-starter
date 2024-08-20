@@ -1,4 +1,4 @@
-import { Auth } from '@features';
+import { authRoutes } from '@features';
 import { DefaultLayout } from '@layouts';
 import { About, Home } from '@screens';
 
@@ -19,14 +19,8 @@ const defaultRoutes = [
         path: '/about',
         element: <About />,
       },
-      {
-        path: '/login',
-        element: <Auth page="login" />,
-      },
-      {
-        path: '/signup',
-        element: <Auth page="signup" />,
-      },
+
+      ...authRoutes,
     ],
   },
 ];
